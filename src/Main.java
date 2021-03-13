@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-public class BookStore {
+public class Main {
     public static void main(String [] args) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -21,7 +21,7 @@ public class BookStore {
                 intBookPrices[i] = Integer.parseInt(bookPrices[i]);
                 }
                 Arrays.sort(intBookPrices);
-                System.out.println(process(intBookPrices, arraySize, money));
+                System.out.println(process(intBookPrices, arraySize, money)+"\n");
 
             }
             line = in.readLine();
@@ -41,7 +41,7 @@ public class BookStore {
         for(int k = 0; k < arraySize-1; k++){
             while(i <= j && pos<0){
                 int m = (i+j)/2;
-                if(intBookPrices[m]+intBookPrices[k] == money){
+                if((intBookPrices[m]+intBookPrices[k] == money) && (m != k)){
                 	in1 = intBookPrices[m];
                 	in2 = intBookPrices[k];
                 	nums.add(in1);
@@ -64,8 +64,8 @@ public class BookStore {
         		in1 = nums.get(n);
         		in2 = nums.get(n+1);
         	}
-        }
-        ret = "Peter should buy books whose prices are "+in2+" and "+in1+"\n";
+         }
+        ret = "Peter should buy books whose prices are "+in2+" and "+in1+".";
         return ret;
     }
 }
