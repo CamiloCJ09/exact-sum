@@ -28,7 +28,6 @@ public class Main {
         }while(line != null);
         in.close();
         out.close();
-        System.exit(0);
     }
     public static String process(int[] intBookPrices, int arraySize,int money){
         String ret = "";
